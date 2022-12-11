@@ -1,18 +1,20 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom';
 import Footer from '../common/components/Footer';
-import Header from '../common/components/Header';
+import Header from '../common/components/Header/Header';
+import Home from './Portfolio';
+
 
 interface props {
-    children?: React.ReactNode;
 };
 
-const Layout: React.FC<props> = ({ children }: props) => {
+const Layout: React.FC<props> = () => {
     return (
-        <div>
+        <>
             <Header />
-            {children}
+            <Outlet />
             <Footer />
-        </div>
+        </>
     )
 }
 
