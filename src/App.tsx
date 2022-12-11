@@ -1,7 +1,16 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Layout from "./pages/Layout";
+import NoPage from "./pages/NoPage";
 
 function App() {
-  return <div className="App"></div>;
+  return <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+    </Route>
+    <Route path="*" element={<NoPage />} />
+  </Routes>;
 }
 
 export default App;
